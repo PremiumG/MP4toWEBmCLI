@@ -1,5 +1,5 @@
 # MP4toWEBmCLI
-Simmilar to te other repo but its not a service but a cli tool. In fatc a very simple one.
+Similar to te other repo but its not a service but a cli tool. In fatc a very simple one.
 Code is ok but lacks features and for some reason I didn't use the ffmpeg librarly for go.
 
 ## Idea
