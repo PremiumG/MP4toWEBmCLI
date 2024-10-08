@@ -15,6 +15,7 @@ import (
 )
 
 func main() {
+
 	// Get the user's home directory
 
 	homeDir, err := os.UserHomeDir()
@@ -102,6 +103,8 @@ func main() {
 			}
 		case "<C-d>":
 			l.ScrollHalfPageDown()
+		case "o":
+			openFolder()
 		case "<C-u>":
 			l.ScrollHalfPageUp()
 		case "<C-f>":
@@ -130,6 +133,7 @@ func main() {
 
 		ui.Render(l, g4)
 	}
+
 }
 
 func downloadFFMPEG(g4 *widgets.Gauge) {
@@ -213,4 +217,12 @@ func convertThatBitch(path string, dFolder string, g4 *widgets.Gauge) error {
 	}
 	return nil
 
+}
+
+func openFolder() {
+	cmd := exec.Command("explorer", "C:\\Users\\X\\Downloads")
+	err := cmd.Start() // Use Start() to run asynchronously
+	if err != nil {
+		fmt.Println("Error opening folder:", err)
+	}
 }
